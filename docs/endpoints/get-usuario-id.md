@@ -1,9 +1,9 @@
-# Endpoint: `GET /temas/{id}`
+# Endpoint: `GET /usuarios/{id}`
 
-Permite obtener información detallada sobre un tema específico mediante su identificador único.
+Permite obtener información detallada sobre un usuario específico mediante su identificador único.
 
 ## Parámetros de URL
-- `{id}` (obligatorio): Identificador único del medico que se desea recuperar.
+- `{id}` (obligatorio): Identificador único del usuario que se desea recuperar.
 
 ## Ejemplo de Solicitud
 ```http
@@ -16,7 +16,7 @@ PATCH /usuario/1
 ## Respuesta Exitosa (Código 200 OK)
 ```json
 {
-  "id_medico": 1,
+  "id_usuarios": 1,
   "nombres": "jose",
   "apellidos": "perez",
   "fecha_nacimiento": "2000-05-12"

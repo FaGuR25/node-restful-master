@@ -17,7 +17,7 @@ PATCH /medicamento/123
 ## Respuesta Exitosa (Código 200 OK)
 ```json
 {
-  "id_medicamentos": 123,
+  "id_medicamentos": 1,
   "nombre": "losartan",
   "dosis": "dos al dia"
 }
