@@ -1,11 +1,10 @@
-# API RESTful con Node.js
+# Proyecto 
 
-Proyecto de demostración para clases de desarrollo de APIs utilizando Node.js,
-con implementación en contenedores de Docker.
+Actividad que tiene como objetivo organizar la base de datos de nuestro proyecto, en mi caso una app de un recordatorio medico. En este readme esta todo lo que necesitamos para iniciar y desarrollar la actividad.
 
 ## Tabla de contenido
 
-- [API RESTful con Node.js](#api-restful-con-nodejs)
+- [Proyecto](#proyecto)
   - [Tabla de contenido](#tabla-de-contenido)
   - [Requisitos de instalación](#requisitos-de-instalación)
   - [Instrucciones para la instalación](#instrucciones-para-la-instalación)
