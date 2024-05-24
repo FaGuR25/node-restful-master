@@ -14,13 +14,14 @@ services:
     image: mysql:8.0.35
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./scripts:/docker-entrypoint-initdb.d
     expose:
       - 3306
     ports:
       - 3307:3306
     environment:
       MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
-      MYSQL_DATABASE: biblioteca
+      MYSQL_DATABASE: enfermedades
       MYSQL_USER: user_biblioteca
       MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
     secrets:
