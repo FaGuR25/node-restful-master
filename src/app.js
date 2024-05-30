@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 app.get('/gramos', GramosControllers.indexGet);
 app.post('/gramos', GramosControllers.agregar);
 app.put('/gramos/:id([0-9]+)', GramosControllers.editar);
-app.patch('/gramos/:id([0-9]+)', GramosControllers.itemPatch); 
+app.patch('/gramos/:id([0-9]+)', GramosControllers.itemPatch);
 
 app.get('/marca', MarcaControllers.indexGet);
 app.post('/marca', MarcaControllers.agregar);
