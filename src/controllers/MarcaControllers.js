@@ -1,13 +1,13 @@
-const UsuariosModel = require('../models/usuarios');
+const MarcaModel = require('../models/marca');
 
-class UsuariosControllers {
+class MarcaControllers {
     static async indexGet(req, res) {
-        let data = await UsuariosModel.consultar();
+        let data = await MarcaModel.consultar();
         res.send(data);
     }
     static async itemGet(req, res) {
         let id = req.params.id;
-        let data = await UsuariosModel.consultarPorId(id);
+        let data = await MarcaModel.consultarPorId(id);
         if (data.length == 0) {
             res.status(404).send({errno: 404, error: 'Not found'});
             return;
@@ -15,14 +15,13 @@ class UsuariosControllers {
         res.send(data[0]);
     }
 
-    
     static async agregar(req, res){
        
         try {
 
-            let data = await UsuariosModel.agregar(req.body)
+            let data = await MarcaModel.agregar(req.body)
 
-            data = await UsuariosModel.consultarPorId(data[0]);
+            data = await MarcaModel.consultarPorId(data[0]);
             if (data.length == 0){
                 res.status(404).send({code: 404, message:'not found'});
             }
@@ -38,9 +37,9 @@ class UsuariosControllers {
        
         try {
 
-            let data = await UsuariosModel.editar(req.params.id,req.body)
+            let data = await MarcaModel.editar(req.params.id,req.body)
             
-            data = await UsuariosModel.consultarPorId(req.params.id);
+            data = await MarcaModel.consultarPorId(req.params.id);
             if (data.length == 0){
                 res.status(404).send({code: 404, message:'not found'});
             }
@@ -56,7 +55,7 @@ class UsuariosControllers {
             const id = req.params.id;
             const updatedFields = req.body;
 
-            const result = await UsuariosModel.actualizar(id, updatedFields);
+            const result = await MarcaModel.actualizar(id, updatedFields);
 
             if (result === 0) {
                 res.status(404).send({ errno: 404, error: 'Not found' });
@@ -68,6 +67,10 @@ class UsuariosControllers {
             res.status(400).send({ errno: 400, error: 'Bad Request' });
         }
     }
+
+    
+
+    
 }
 
-module.exports = UsuariosControllers;
+module.exports = MarcaControllers;

@@ -1,11 +1,15 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 const puerto = 80;
 const TemasController = require('./controllers/TemasController');
-const UsuariosControllers = require('./controllers/UsuariosControllers');
-const EnfermedadesControllers = require('./controllers/EnfermedadesControllers');
-const MedicosControllers = require('./controllers/MedicosControllers');
-const MedicamentosControllers = require('./controllers/MedicamentosControllers');
+const GramosControllers = require('./controllers/GramosControllers');
+const MarcaControllers = require('./controllers/MarcaControllers');
+const MedicinaControllers = require('./controllers/MedicinaControllers');
+const PrecioControllers = require('./controllers/PrecioControllers');
+
+app.use(cors());
 
 app.use(express.json());
 
@@ -18,27 +22,27 @@ app.get('/', function (req, res) {
 //app.get('/temas', TemasController.indexGet);
 //app.get('/temas/:id([0-9]+)', TemasController.itemGet);
 
-app.get('/usuarios', UsuariosControllers.indexGet);
-app.post('/usuarios', UsuariosControllers.agregar);
-app.put('/usuarios/:id([0-9]+)', UsuariosControllers.editar);
-app.patch('/usuarios/:id([0-9]+)', UsuariosControllers.itemPatch);
+app.get('/gramos', GramosControllers.indexGet);
+app.post('/gramos', GramosControllers.agregar);
+app.put('/gramos/:id([0-9]+)', GramosControllers.editar);
+app.patch('/gramos/:id([0-9]+)', GramosControllers.itemPatch);
 
-app.get('/enfermedades', EnfermedadesControllers.indexGet);
-app.post('/enfermedades', EnfermedadesControllers.agregar);
-app.put('/enfermedades/:id([0-9]+)', EnfermedadesControllers.editar);
-app.patch('/enfermedades/:id([0-9]+)', EnfermedadesControllers.itemPatch);
-
-
-app.get('/medicos', MedicosControllers.indexGet);
-app.post('/medicos', MedicosControllers.agregar);
-app.put('/medicos/:id([0-9]+)', MedicosControllers.editar);
-app.patch('/medicos/:id([0-9]+)', MedicosControllers.itemPatch);
+app.get('/marca', MarcaControllers.indexGet);
+app.post('/marca', MarcaControllers.agregar);
+app.put('/marca/:id([0-9]+)', MarcaControllers.editar);
+app.patch('/marca/:id([0-9]+)', MarcaControllers.itemPatch);
 
 
-app.get('/medicamentos', MedicamentosControllers.indexGet);
-app.post('/medicamentos', MedicamentosControllers.agregar);
-app.put('/medicamentos/:id([0-9]+)', MedicamentosControllers.editar);
-app.patch('/medicamentos/:id([0-9]+)', MedicamentosControllers.itemPatch);
+app.get('/medicina', MedicinaControllers.indexGet);
+app.post('/medicina', MedicinaControllers.agregar);
+app.put('/medicina/:id([0-9]+)', MedicinaControllers.editar);
+app.patch('/medicina/:id([0-9]+)', MedicinaControllers.itemPatch);
+
+
+app.get('/precio', MedicinaControllers.precioGet);
+app.post('/precio', PrecioControllers.agregar);
+app.put('/precio/:id([0-9]+)', PrecioControllers.editar);
+app.patch('/precio/:id([0-9]+)', PrecioControllers.itemPatch);
 
 
 

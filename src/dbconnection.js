@@ -1,7 +1,8 @@
 const fs = require('fs');
 const knex = require('knex');
 
-async function connectMysql() {
+async function 
+connectMysql() {
     const mysqlPassword = await fs.promises.readFile('/run/secrets/mysql_password');
     console.log("mysqlPassword "+mysqlPassword);
     const db = knex({

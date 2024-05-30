@@ -1,13 +1,13 @@
-const MedicosModels = require('../models/medicos');
+const GramosModel = require('../models/gramos');
 
-class MedicosControllers {
+class GramosControllers {
     static async indexGet(req, res) {
-        let data = await MedicosModels.consultar();
+        let data = await GramosModel.consultar();
         res.send(data);
     }
     static async itemGet(req, res) {
         let id = req.params.id;
-        let data = await MedicosModels.consultarPorId(id);
+        let data = await GramosModel.consultarPorId(id);
         if (data.length == 0) {
             res.status(404).send({errno: 404, error: 'Not found'});
             return;
@@ -15,15 +15,14 @@ class MedicosControllers {
         res.send(data[0]);
     }
 
-    
     static async agregar(req, res){
        
         try {
 
-            let data = await MedicosModels.agregar(req.body)
+            let data = await GramosModel.agregar(req.body)
 
 
-            data = await MedicosModels.consultarPorId(data[0]);
+            data = await GramosModel.consultarPorId(data[0]);
             if (data.length == 0){
                 res.status(404).send({code: 404, message:'not found'});
             }
@@ -39,9 +38,9 @@ class MedicosControllers {
        
         try {
 
-            let data = await MedicosModels.editar(req.params.id,req.body)
+            let data = await GramosModel.editar(req.params.id,req.body)
             
-            data = await MedicosModels.consultarPorId(req.params.id);
+            data = await GramosModel.consultarPorId(req.params.id);
             if (data.length == 0){
                 res.status(404).send({code: 404, message:'not found'});
             }
@@ -49,7 +48,7 @@ class MedicosControllers {
         } catch (error) {
             res.status(404).send({code: 404, message:error.sqlMessage});
  
-        }     
+        }          
     }
 
     static async itemPatch(req, res) {
@@ -57,7 +56,7 @@ class MedicosControllers {
             const id = req.params.id;
             const updatedFields = req.body;
 
-            const result = await MedicosModels.actualizar(id, updatedFields);
+            const result = await GramosModel.actualizar(id, updatedFields);
 
             if (result === 0) {
                 res.status(404).send({ errno: 404, error: 'Not found' });
@@ -69,6 +68,8 @@ class MedicosControllers {
             res.status(400).send({ errno: 400, error: 'Bad Request' });
         }
     }
+
 }
 
-module.exports = MedicosControllers;
+
+module.exports = GramosControllers;

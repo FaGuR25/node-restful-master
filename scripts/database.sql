@@ -1,32 +1,30 @@
 CREATE DATABASE IF NOT EXISTS enfermedades;
 USE enfermedades;
 
-CREATE TABLE usuarios(
-    id_usuario    INTEGER         NOT NULL     AUTO_INCREMENT,
-    nombres       VARCHAR(150)    NOT NULL,
-    apellidos     VARCHAR(255)    NOT NULL,
-    fecha_nacimiento DATE         NOT NULL,
-    PRIMARY KEY(id_usuario)
+CREATE TABLE Medicina(
+    id_numMedicina   INTEGER         NOT NULL     AUTO_INCREMENT,
+    nombre          VARCHAR(150)     NOT NULL,
+    gramos          INTEGER(150)     NOT NULL,
+    precio          INTEGER(150)     NOT NULL,
+    marca           VARCHAR(150)     NOT NULL,
+    PRIMARY KEY(id_numMedicina)
+);
+/*
+CREATE TABLE gramos(
+    id_gramos         INTEGER         NOT NULL     AUTO_INCREMENT,
+    cantidad          INTEGER(150)    NOT NULL,
+    PRIMARY KEY(id_gramos)
 );
 
-CREATE TABLE medicos(
-    id_medico         INTEGER         NOT NULL     AUTO_INCREMENT,
-    nombres           VARCHAR(150)    NOT NULL,
-    apellidos         VARCHAR(255)    NOT NULL,
-    especialidad      VARCHAR(255)    NOT NULL,
-    PRIMARY KEY(id_medico)
+CREATE TABLE precio(
+    id_precio          INTEGER         NOT NULL     AUTO_INCREMENT,
+    cantidadPrecio     INTEGER(255)    NOT NULL,
+    PRIMARY KEY(id_precio)
 );
 
-CREATE TABLE enfermedades(
-    id_enfermedades      INTEGER         NOT NULL     AUTO_INCREMENT,
-    nombre               VARCHAR(255)    NOT NULL,
-    PRIMARY KEY(id_enfermedades)
-);
+CREATE TABLE marca(
+    id_marca        INTEGER         NOT NULL     AUTO_INCREMENT,
+    nombreMarca     VARCHAR(255)    NOT NULL,
+    PRIMARY KEY (id_marca)
 
-CREATE TABLE medicamentos(
-    id_medicamentos   INTEGER         NOT NULL     AUTO_INCREMENT,
-    nombres           VARCHAR(255)    NOT NULL,
-    dosis             VARCHAR(32)     NOT NULL,
-    PRIMARY KEY (id_medicamentos)
-
-);
+);*/

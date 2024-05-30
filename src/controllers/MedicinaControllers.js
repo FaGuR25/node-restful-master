@@ -1,13 +1,17 @@
-const EnfermedadesModel = require('../models/enfermedades');
+const MedicinaModel = require('../models/medicina');
 
-class EnfermedadesControllers {
+class MedicinaControllers {
     static async indexGet(req, res) {
-        let data = await EnfermedadesModel.consultar();
+        let data = await MedicinaModel.consultar();
+        res.send(data);
+    }
+    static async precioGet(req, res) {
+        let data = await MedicinaModel.precio();
         res.send(data);
     }
     static async itemGet(req, res) {
         let id = req.params.id;
-        let data = await EnfermedadesModel.consultarPorId(id);
+        let data = await MedicinaModel.consultarPorId(id);
         if (data.length == 0) {
             res.status(404).send({errno: 404, error: 'Not found'});
             return;
@@ -15,14 +19,15 @@ class EnfermedadesControllers {
         res.send(data[0]);
     }
 
+    
     static async agregar(req, res){
        
         try {
 
-            let data = await EnfermedadesModel.agregar(req.body)
+            let data = await MedicinaModel.agregar(req.body)
 
 
-            data = await EnfermedadesModel.consultarPorId(data[0]);
+            data = await MedicinaModel.consultarPorId(data[0]);
             if (data.length == 0){
                 res.status(404).send({code: 404, message:'not found'});
             }
@@ -38,9 +43,9 @@ class EnfermedadesControllers {
        
         try {
 
-            let data = await EnfermedadesModel.editar(req.params.id,req.body)
+            let data = await MedicinaModel.editar(req.params.id,req.body)
             
-            data = await EnfermedadesModel.consultarPorId(req.params.id);
+            data = await MedicinaModel.consultarPorId(req.params.id);
             if (data.length == 0){
                 res.status(404).send({code: 404, message:'not found'});
             }
@@ -48,7 +53,7 @@ class EnfermedadesControllers {
         } catch (error) {
             res.status(404).send({code: 404, message:error.sqlMessage});
  
-        }          
+        }     
     }
 
     static async itemPatch(req, res) {
@@ -56,7 +61,7 @@ class EnfermedadesControllers {
             const id = req.params.id;
             const updatedFields = req.body;
 
-            const result = await EnfermedadesModel.actualizar(id, updatedFields);
+            const result = await MedicinaModel.actualizar(id, updatedFields);
 
             if (result === 0) {
                 res.status(404).send({ errno: 404, error: 'Not found' });
@@ -68,8 +73,6 @@ class EnfermedadesControllers {
             res.status(400).send({ errno: 400, error: 'Bad Request' });
         }
     }
-
 }
 
-
-module.exports = EnfermedadesControllers;
+module.exports = MedicinaControllers;
