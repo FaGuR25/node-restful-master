@@ -8,6 +8,7 @@ const GramosControllers = require('./controllers/GramosControllers');
 const MarcaControllers = require('./controllers/MarcaControllers');
 const MedicinaControllers = require('./controllers/MedicinaControllers');
 const PrecioControllers = require('./controllers/PrecioControllers');
+const GuardarControllers = require('./controllers/GuardarControllers');
 
 app.use(cors());
 
@@ -37,6 +38,11 @@ app.get('/medicina', MedicinaControllers.indexGet);
 app.post('/medicina', MedicinaControllers.agregar);
 app.put('/medicina/:id([0-9]+)', MedicinaControllers.editar);
 app.patch('/medicina/:id([0-9]+)', MedicinaControllers.itemPatch);
+
+app.get('/guardar', GuardarControllers.indexGet);
+app.post('/guardar', GuardarControllers.agregar);
+app.put('/guardar/:id([0-9]+)', GuardarControllers.editar);
+app.patch('/guardar/:id([0-9]+)', GuardarControllers.itemPatch);1
 
 
 app.get('/precio', MedicinaControllers.precioGet);

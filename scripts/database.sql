@@ -9,6 +9,14 @@ CREATE TABLE Medicina(
     marca           VARCHAR(150)     NOT NULL,
     PRIMARY KEY(id_numMedicina)
 );
+
+CREATE TABLE Guardar(
+    id_usuario      INTEGER         NOT NULL     AUTO_INCREMENT,
+    nombre          VARCHAR(150)     NOT NULL,
+    correo          VARCHAR(150)     NOT NULL,
+    contraseña      VARCHAR(150)     NOT NULL,
+    PRIMARY KEY(id_usuario)
+);
 /*
 CREATE TABLE gramos(
     id_gramos         INTEGER         NOT NULL     AUTO_INCREMENT,
