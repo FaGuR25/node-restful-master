@@ -42,7 +42,7 @@ app.patch('/medicina/:id([0-9]+)', MedicinaControllers.itemPatch);
 app.get('/guardar', GuardarControllers.indexGet);
 app.post('/guardar', GuardarControllers.agregar);
 app.put('/guardar/:id([0-9]+)', GuardarControllers.editar);
-app.patch('/guardar/:id([0-9]+)', GuardarControllers.itemPatch);1
+app.patch('/guardar/:id([0-9]+)', GuardarControllers.itemPatch);
 
 
 app.get('/precio', MedicinaControllers.precioGet);

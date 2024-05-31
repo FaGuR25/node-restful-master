@@ -1,6 +1,7 @@
 CREATE DATABASE IF NOT EXISTS enfermedades;
 USE enfermedades;
 
+
 CREATE TABLE Medicina(
     id_numMedicina   INTEGER         NOT NULL     AUTO_INCREMENT,
     nombre          VARCHAR(150)     NOT NULL,
@@ -14,7 +15,7 @@ CREATE TABLE Guardar(
     id_usuario      INTEGER         NOT NULL     AUTO_INCREMENT,
     nombre          VARCHAR(150)     NOT NULL,
     correo          VARCHAR(150)     NOT NULL,
-    contraseña      VARCHAR(150)     NOT NULL,
+    contrasena      VARCHAR(150)     NOT NULL,
     PRIMARY KEY(id_usuario)
 );
 /*
