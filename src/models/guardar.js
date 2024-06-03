@@ -29,10 +29,6 @@ class GuardarModel {
         let db = await connectMysql();
         return await db('Guardar').where('id_usuario', id_usuario).update(campos);
     }
-  
-
-
 }
-
 module.exports = GuardarModel;
 

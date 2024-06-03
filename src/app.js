@@ -11,7 +11,6 @@ const PrecioControllers = require('./controllers/PrecioControllers');
 const GuardarControllers = require('./controllers/GuardarControllers');
 
 app.use(cors());
-
 app.use(express.json());
 
 app.get('/', function (req, res) {
@@ -19,10 +18,8 @@ app.get('/', function (req, res) {
     res.setHeader('Content-Type', 'text/plain');
     res.send('¡Prueba 123456789012!');
 });
-
 //app.get('/temas', TemasController.indexGet);
 //app.get('/temas/:id([0-9]+)', TemasController.itemGet);
-
 app.get('/gramos', GramosControllers.indexGet);
 app.post('/gramos', GramosControllers.agregar);
 app.put('/gramos/:id([0-9]+)', GramosControllers.editar);
