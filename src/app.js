@@ -9,6 +9,7 @@ const MarcaControllers = require('./controllers/MarcaControllers');
 const MedicinaControllers = require('./controllers/MedicinaControllers');
 const PrecioControllers = require('./controllers/PrecioControllers');
 const GuardarControllers = require('./controllers/GuardarControllers');
+const NotasControllers = require('./controllers/NotasControllers')
 
 app.use(cors());
 app.use(express.json());
@@ -20,6 +21,9 @@ app.get('/', function (req, res) {
 });
 //app.get('/temas', TemasController.indexGet);
 //app.get('/temas/:id([0-9]+)', TemasController.itemGet);
+app.get('/notas', NotasControllers.indexGet);
+app.post('/notas', NotasControllers.agregar);
+
 app.get('/gramos', GramosControllers.indexGet);
 app.post('/gramos', GramosControllers.agregar);
 app.put('/gramos/:id([0-9]+)', GramosControllers.editar);
