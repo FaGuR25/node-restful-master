@@ -9,7 +9,9 @@ const MarcaControllers = require('./controllers/MarcaControllers');
 const MedicinaControllers = require('./controllers/MedicinaControllers');
 const PrecioControllers = require('./controllers/PrecioControllers');
 const GuardarControllers = require('./controllers/GuardarControllers');
-const NotasControllers = require('./controllers/NotasControllers')
+const NotasControllers = require('./controllers/NotasControllers');
+const CitasControllers = require('./controllers/CitasControllers');
+
 
 
 app.use(cors());
@@ -25,6 +27,8 @@ app.get('/', function (req, res) {
 app.get('/notas', NotasControllers.indexGet);
 app.post('/notas', NotasControllers.agregar);
 
+app.get('/citas', CitasControllers.indexGet);
+app.post('/citas', CitasControllers.agregar);
 
 
 app.get('/gramos', GramosControllers.indexGet);
