@@ -19,10 +19,10 @@ CREATE TABLE Guardar(
     PRIMARY KEY(id_usuario)
 );
 CREATE TABLE Notas(
-    id_notas        INTEGER         NOT NULL      AUTO_INCREMENT,
+    id_cita        INTEGER         NOT NULL      AUTO_INCREMENT,
     titulo          VARCHAR(150)    NOT NULL,
     notas           VARCHAR(150)    NOT NULL,
-    PRIMARY KEY(id_notas)
+    PRIMARY KEY(id_cita)
 );
 
 CREATE TABLE Medicamentos(
@@ -33,13 +33,7 @@ CREATE TABLE Medicamentos(
 
 );
 
-CREATE TABLE Citas(
-    id_cita         INTEGER        NOT NULL       AUTO_INCREMENT,
-    fecha           DATE           NOT NULL,
-    tiempo          TIME           NOT NULL,
-    documentos      VARCHAR(150)   NOT NULL,
-    PRIMARY KEY(id_cita)
-);
+
 /*
 CREATE TABLE gramos(
     id_gramos         INTEGER         NOT NULL     AUTO_INCREMENT,
