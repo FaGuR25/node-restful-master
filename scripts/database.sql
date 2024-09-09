@@ -2,28 +2,66 @@ CREATE DATABASE IF NOT EXISTS enfermedades;
 USE enfermedades;
 
 
-CREATE TABLE Medicina(
-    id_numMedicina   INTEGER         NOT NULL     AUTO_INCREMENT,
-    nombre          VARCHAR(150)     NOT NULL,
-    gramos          INTEGER(150)     NOT NULL,
-    precio          INTEGER(150)     NOT NULL,
-    marca           VARCHAR(150)     NOT NULL,
-    PRIMARY KEY(id_numMedicina)
-);
-
-CREATE TABLE Guardar(
-    id_usuario      INTEGER          NOT NULL     AUTO_INCREMENT,
-    nombre          VARCHAR(150)     NOT NULL,
-    correo          VARCHAR(150)     NOT NULL,
-    contrasena      VARCHAR(150)     NOT NULL,
-    PRIMARY KEY(id_usuario)
-);
 CREATE TABLE Notas(
     id_notas        INTEGER         NOT NULL      AUTO_INCREMENT,
     titulo          VARCHAR(150)    NOT NULL,
     notas           VARCHAR(150)    NOT NULL,
     PRIMARY KEY(id_notas)
 );
+
+
+CREATE TABLE Medicamentos(
+    id_medicamento      INTEGER         NOT NULL  AUTO_INCREMENT,
+    nombreMedicamento   VARCHAR(150)    NOT NULL,
+    gramos              INTEGER         NOT NULL,
+    tiempo              TIME            NOT NULL,
+    -- SET('L', 'Mar', 'Mié', 'J', 'V', 'S', 'D') NOT NULL,
+    PRIMARY KEY(id_medicamento)
+);
+
+CREATE TABLE Citas(
+    id_citas            INTEGER         NOT NULL AUTO_INCREMENT,
+    fecha               DATE            NOT NULL,
+    tiempo              TIME            NOT NULL,
+    documentos          VARCHAR(150)    NOT NULL,
+    -- recordatorio        TIME            NOT NULL,
+    PRIMARY KEY(id_citas)
+);
+
+
+
+-- CREATE TABLE Medicina(
+--     id_numMedicina   INTEGER         NOT NULL     AUTO_INCREMENT,
+--     nombre          VARCHAR(150)     NOT NULL,
+--     gramos          INTEGER(150)     NOT NULL,
+--     precio          INTEGER(150)     NOT NULL,
+--     marca           VARCHAR(150)     NOT NULL,
+--     PRIMARY KEY(id_numMedicina)
+-- );
+
+-- CREATE TABLE Guardar(
+--     id_usuario      INTEGER          NOT NULL     AUTO_INCREMENT,
+--     nombre          VARCHAR(150)     NOT NULL,
+--     correo          VARCHAR(150)     NOT NULL,
+--     contrasena      VARCHAR(150)     NOT NULL,
+--     PRIMARY KEY(id_usuario)
+-- );
+
+
+-- CREATE TABLE Libros(
+--     id_libro       INTEGER       NOT NULL AUTO_INCREMENT,
+--     nombre         VARCHAR(150)  NOT NULL,
+--     texto          TEXT,
+--     imagen         BLOB,
+--     PRIMARY KEY (id_libro)
+-- );
+
+
+
+
+
+
+/*
 
 CREATE TABLE Medicamentos(
     id_medicamento      INTEGER         NOT NULL  AUTO_INCREMENT,
@@ -32,19 +70,6 @@ CREATE TABLE Medicamentos(
     PRIMARY KEY(id_medicamento)
 
 );
-
-CREATE TABLE Citas(
-    id_citas            INTEGER         NOT NULL AUTO_INCREMENT,
-    fecha               DATE            NOT NULL,
-    tiempo              TIME            NOT NULL,
-    documentos          VARCHAR(150)    NOT NULL,
-    PRIMARY KEY(id_citas)
-);
-
-
-
-
-/*
 
 CREATE TABLE Citas(
     id_cita         INTEGER        NOT NULL       AUTO_INCREMENT,

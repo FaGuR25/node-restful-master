@@ -24,6 +24,7 @@ class CitasModel {
         .update(Citas)
         return await query;
     }
+    
 
     static async actualizar(id_citas, campos) {
         let db = await connectMysql();
