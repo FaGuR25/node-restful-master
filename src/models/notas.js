@@ -25,6 +25,14 @@ class NotasModel {
         return await query;
     }
 
+    static async eliminar(id,Notas) {
+        let db = await connectMysql();
+        let query = db('Notas')
+        .where({ id_Notas: id })
+        .delete(Notas)
+        return await query;
+    }
+
     static async actualizar(id_notas, campos) {
         let db = await connectMysql();
         return await db('Notas').where('id_notas', id_notas).update(campos);

@@ -25,6 +25,13 @@ class CitasModel {
         return await query;
     }
     
+    static async eliminar(id,Citas) {
+        let db = await connectMysql();
+        let query = db('Citas')
+        .where({ id_citas: id })
+        .delete(Citas)
+        return await query;
+    }
 
     static async actualizar(id_citas, campos) {
         let db = await connectMysql();

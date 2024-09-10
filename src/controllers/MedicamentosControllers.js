@@ -56,6 +56,24 @@ class MedicamentosControllers {
         }     
     }
 
+    static async eliminar(req, res){
+        try {
+            //let data = await MedicamentosModel.eliminar(req.params.id,req.body)
+            
+            let data = await MedicamentosModel.consultarPorId(req.params.id);
+            if (data.length == 0){
+                res.status(404).send({code: 404, message:'not found'});
+            }
+        
+            data = await MedicamentosModel.eliminar(req.params.id,req.body)
+            res.send({ message: 'Successfull delete '});
+
+        } catch (error) {
+            res.status(404).send({code: 404, message:error.sqlMessage});
+ 
+        }     
+    }
+
     static async itemPatch(req, res) {
         try {
             const id = req.params.id;

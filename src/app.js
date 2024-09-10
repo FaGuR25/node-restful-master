@@ -28,12 +28,15 @@ app.get('/', function (req, res) {
 //app.get('/temas/:id([0-9]+)', TemasController.itemGet);
 app.get('/notas', NotasControllers.indexGet);
 app.post('/notas', NotasControllers.agregar);
+app.delete('/notas/:id', NotasControllers.eliminar);
 
 app.get('/citas', CitasControllers.indexGet);
 app.post('/citas', CitasControllers.agregar);
+app.delete('/citas/:id', CitasControllers.eliminar);
 
 app.get('/medicamentos', MedicamentosControllers.indexGet);
 app.post('/medicamentos', MedicamentosControllers.agregar);
+app.delete('/medicamentos/:id', MedicamentosControllers.eliminar);
 
 // app.get('/libros', LibrosControllers.indexGet);
 // app.post('/libros', LibrosControllers.agregar);

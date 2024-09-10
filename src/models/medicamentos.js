@@ -25,6 +25,14 @@ class MedicamentosModel {
         return await query;
     }
 
+    static async eliminar(id,Medicamentos) {
+        let db = await connectMysql();
+        let query = db('Medicamentos')
+        .where({ id_Medicamento: id })
+        .delete(Medicamentos)
+        return await query;
+    }
+
     static async actualizar(id_medicamento, campos) {
         let db = await connectMysql();
         return await db('Medicamentos').where('id_medicamento', id_medicamento).update(campos);
