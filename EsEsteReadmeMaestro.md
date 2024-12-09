@@ -1,6 +1,6 @@
 # Back-end
 
-En este README voy a incluir las instrucciones de instalacion y configuracion que llegue a utilizar.
+En este README voy a incluir las instrucciones de instalacion y configuracion que llegue a utilizar. Este proyecto en especifico fue utilizado para la programación Back-end de la aplicación Agenda Salud.
 
 ## Creación del proyecto: Guía para la creación de este repositorio
 
@@ -177,8 +177,15 @@ Agregue una nueva tabla llamada **Guardar** y en ella puse los campos:
 - nombre
 - correo
 - contraseña
+
+Las tablas finales que quedaron fueron:
+
+- CITAS
+- MEDICAMENTOS
+- NOTAS
   
 ![alt text](image.png)
+![alt text](basededatos.png)
 
 Despues de hacer estos cambios ejecuté los comandos que anteriormente dije y seguí con los demas archivos.
 
@@ -193,6 +200,8 @@ Donde mando a llamar el nombre de la tabla junto con su ID.
 > Nota
 >
 > Tienes que tener cuidad con las mayusculas y minusculas en el nombre de tus tablas porque es sensible, lo digo porque yo tuve ese problema.
+
+Creé también los demás models de las respectivas tablas para el proyecto de la misma manera que hice con la de **guardar.js** solo cambiando las variables con sumo cuidado de no equivocarme.
 
 
 ### Controllers
@@ -211,11 +220,20 @@ Aquí definimos los métodos que vamos a tener en este caso están los de:
 
 Pero en el caso especifico de este proyecto solo usaré el de **PUT** y **GET**.
 
+Un cambio que hubo aquí es que para las tablas que quedaron al final en la aplicación se quedaron los métodos de:
+
+- POST
+- DELETE
+- GET
+
 ### APP.js
 
 En el App mando a llamar al archivo de GuardarControllers.js y a los metodos de la siguiente manera:
 
 ![alt text](image-4.png)
+![alt text](app-1.png)
+
+Se mandan a llamar todas las tablas.
 
 ### Docker
 
@@ -255,5 +273,12 @@ Aquí es donde se guardan nuestros registros, es nuestra base de datos y entramo
 Es en MySql y desconozco si debe de ser especificamente en localhost o con la IP 127.0.0.1 porque con los dos me da correctamente el acceso a la base de datos con las tablas y los registros.
 
 ![alt text](image-9.png)
+
+
+## Dependencias
+
+El uso de las dependencias fue de unas pocas, más que nada fueron unas que complementaban al express para uso del proyecto en función de ser un back-end.
+
+![alt text](images.png)
 
 

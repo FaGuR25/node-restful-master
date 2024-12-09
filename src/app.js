@@ -14,8 +14,6 @@ const CitasControllers = require('./controllers/CitasControllers');
 const MedicamentosControllers = require('./controllers/MedicamentosControllers');
 // const LibrosControllers = require('./controllers/LibrosControllers');
 
-
-
 app.use(cors());
 app.use(express.json());
 
@@ -70,8 +68,6 @@ app.delete('/medicamentos/:id', MedicamentosControllers.eliminar);
 // app.post('/precio', PrecioControllers.agregar);
 // app.put('/precio/:id([0-9]+)', PrecioControllers.editar);
 // app.patch('/precio/:id([0-9]+)', PrecioControllers.itemPatch);
-
-
 
 
 app.listen(puerto, function() {

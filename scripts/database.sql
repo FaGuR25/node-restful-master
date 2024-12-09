@@ -5,7 +5,7 @@ USE enfermedades;
 CREATE TABLE Notas(
     id_notas        INTEGER         NOT NULL      AUTO_INCREMENT,
     titulo          VARCHAR(150)    NOT NULL,
-    notas           VARCHAR(150)    NOT NULL,
+    notas           VARCHAR(250)    NOT NULL,
     PRIMARY KEY(id_notas)
 );
 
